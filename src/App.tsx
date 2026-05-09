@@ -4,7 +4,7 @@
  */
 
 import { useState } from 'react';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { HashRouter, Routes, Route, Link } from 'react-router-dom';
 import { Menu, X, Instagram } from 'lucide-react';
 import Home from './pages/Home';
 import Donate from './pages/Donate';
@@ -14,7 +14,7 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div id="app-root" className="min-h-screen bg-background text-on-background font-sans flex flex-col">
         {/* Simple Header */}
         <header className="border-b border-outline-variant/20 sticky top-0 bg-surface/80 backdrop-blur-md z-50">
@@ -77,7 +77,7 @@ export default function App() {
           </div>
         </footer>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
