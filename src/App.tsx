@@ -21,7 +21,7 @@ export default function App() {
           <nav className="max-w-[1200px] mx-auto px-6 h-16 flex justify-between items-center">
             <div className="flex items-center gap-2 md:gap-3">
               <Link to="/" className="flex items-center gap-2 md:gap-3 text-base sm:text-lg md:text-xl font-display font-bold tracking-tight">
-                <img src="/ArcEmblem.png" alt="ARC Logo" className="w-8 h-8 md:w-10 md:h-10 object-contain" />
+                <img src={`${import.meta.env.BASE_URL}ArcEmblem.png`} alt="ARC Logo" className="w-8 h-8 md:w-10 md:h-10 object-contain" />
                 Alpine Race Club at OSU 
               </Link>
               <a 

@@ -8,41 +8,41 @@ export default function Home() {
 
   const [carouselImages] = useState(() => {
     const images = [
-      '/Carousel/4327751232432850316.jpg',
-      '/Carousel/4498729786374191800.jpg',
-      '/Carousel/5018653141537839275.jpg',
-      '/Carousel/IMG_1133.jpg',
-      '/Carousel/IMG_1181.jpg',
-      '/Carousel/IMG_1414.jpg',
-      '/Carousel/IMG_1493.jpg',
-      '/Carousel/IMG_1540.jpg',
-      '/Carousel/IMG_1688.jpg',
-      '/Carousel/IMG_2115.jpg',
-      '/Carousel/IMG_2142.jpg',
-      '/Carousel/IMG_2596.jpg',
-      '/Carousel/IMG_2868.jpg',
-      '/Carousel/IMG_5462.jpg',
-      '/Carousel/IMG_6793.jpg',
-      '/Carousel/IMG_7155.jpg',
-      '/Carousel/IMG_7576.jpg',
-      '/Carousel/IMG_7995.jpg',
-      '/Carousel/IMG_8005.jpg',
-      '/Carousel/IMG_8317.jpg',
-      '/Carousel/IMG_8320.jpg',
-      '/Carousel/IMG_8777.jpg',
-      '/Carousel/IMG_8821.jpg',
-      '/Carousel/IMG_8863.jpg',
-      '/Carousel/IMG_8866.jpg',
-      '/Carousel/IMG_8887.jpg',
-      '/Carousel/IMG_8947.jpg',
-      '/Carousel/IMG_9234.jpg',
-      '/Carousel/IMG_9335.jpg',
-      '/Carousel/IMG_9358.jpg',
-      '/Carousel/IMG_9377.jpg',
-      '/Carousel/IMG_9527.jpg',
-      '/Carousel/IMG_9827.jpg',
-      '/Carousel/IMG_9854.jpg'
-    ];
+      'Carousel/4327751232432850316.jpg',
+      'Carousel/4498729786374191800.jpg',
+      'Carousel/5018653141537839275.jpg',
+      'Carousel/IMG_1133.jpg',
+      'Carousel/IMG_1181.jpg',
+      'Carousel/IMG_1414.jpg',
+      'Carousel/IMG_1493.jpg',
+      'Carousel/IMG_1540.jpg',
+      'Carousel/IMG_1688.jpg',
+      'Carousel/IMG_2115.jpg',
+      'Carousel/IMG_2142.jpg',
+      'Carousel/IMG_2596.jpg',
+      'Carousel/IMG_2868.jpg',
+      'Carousel/IMG_5462.jpg',
+      'Carousel/IMG_6793.jpg',
+      'Carousel/IMG_7155.jpg',
+      'Carousel/IMG_7576.jpg',
+      'Carousel/IMG_7995.jpg',
+      'Carousel/IMG_8005.jpg',
+      'Carousel/IMG_8317.jpg',
+      'Carousel/IMG_8320.jpg',
+      'Carousel/IMG_8777.jpg',
+      'Carousel/IMG_8821.jpg',
+      'Carousel/IMG_8863.jpg',
+      'Carousel/IMG_8866.jpg',
+      'Carousel/IMG_8887.jpg',
+      'Carousel/IMG_8947.jpg',
+      'Carousel/IMG_9234.jpg',
+      'Carousel/IMG_9335.jpg',
+      'Carousel/IMG_9358.jpg',
+      'Carousel/IMG_9377.jpg',
+      'Carousel/IMG_9527.jpg',
+      'Carousel/IMG_9827.jpg',
+      'Carousel/IMG_9854.jpg'
+    ].map(p => `${import.meta.env.BASE_URL}${p}`);
     // Fisher-Yates shuffle
     for (let i = images.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -166,7 +166,7 @@ export default function Home() {
             className="relative flex justify-center md:justify-end order-1 md:order-2"
           >
             <img 
-              src="ArcEmblem.png"
+              src={`${import.meta.env.BASE_URL}ArcEmblem.png`}
               alt="ARC Logo"
               className="w-full max-w-[280px] sm:max-w-[400px] md:max-w-[500px] h-auto object-contain"
             />
@@ -184,7 +184,7 @@ export default function Home() {
             className="overflow-hidden rounded-sm border border-outline-variant/30 shadow-2xl aspect-[4/3] sm:aspect-video md:aspect-[16/7]"
           >
             <img 
-              src="/teamphoto.jpg" 
+              src={`${import.meta.env.BASE_URL}teamphoto.jpg`}
               alt="Alpine Race Club Team"
               className="w-full h-full object-cover object-center"
             />
