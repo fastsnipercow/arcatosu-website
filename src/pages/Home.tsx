@@ -80,49 +80,51 @@ export default function Home() {
   return (
     <>
       {/* Carousel Section */}
-      <section className="relative w-full h-[250px] sm:h-[350px] md:h-[500px] bg-black/5 border-b border-outline-variant/10 group">
-        <div 
-          ref={carouselRef}
-          className="flex w-full h-full gap-2 md:gap-4 px-2 md:px-4 py-4 md:py-8 overflow-x-auto snap-x snap-mandatory hide-scrollbar"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-        >
-          {carouselImages.map((src, idx) => (
-            <div key={idx} className="h-full shrink-0 snap-start bg-black/10 rounded-sm shadow-md overflow-hidden relative">
-              <img
-                src={src}
-                className="h-full w-auto object-contain max-w-[90vw]"
-                alt={`Slide ${idx + 1}`}
-              />
-            </div>
-          ))}
-        </div>
-        
-        {/* Controls */}
-        <div className="absolute inset-0 flex items-center justify-between px-2 md:px-6 z-10 pointer-events-none">
-          <button 
-            onClick={prevSlide}
-            className="p-2 md:p-3 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors pointer-events-auto shadow-lg backdrop-blur-sm"
-            aria-label="Previous slide"
+      <section className="w-full bg-black/5 border-b border-outline-variant/10 flex flex-col">
+        <div className="relative w-full h-[250px] sm:h-[350px] md:h-[500px] group">
+          <div 
+            ref={carouselRef}
+            className="flex w-full h-full gap-2 md:gap-4 px-2 md:px-4 py-4 md:py-8 overflow-x-auto snap-x snap-mandatory hide-scrollbar"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
-            <ChevronLeft size={24} className="md:w-7 md:h-7" />
-          </button>
-          <button 
-            onClick={nextSlide}
-            className="p-2 md:p-3 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors pointer-events-auto shadow-lg backdrop-blur-sm"
-            aria-label="Next slide"
-          >
-            <ChevronRight size={24} className="md:w-7 md:h-7" />
-          </button>
+            {carouselImages.map((src, idx) => (
+              <div key={idx} className="h-full shrink-0 snap-start bg-black/10 rounded-sm shadow-md overflow-hidden relative">
+                <img
+                  src={src}
+                  className="h-full w-auto object-contain max-w-[90vw]"
+                  alt={`Slide ${idx + 1}`}
+                />
+              </div>
+            ))}
+          </div>
+          
+          {/* Controls */}
+          <div className="absolute inset-0 flex items-center justify-between px-2 md:px-6 z-10 pointer-events-none">
+            <button 
+              onClick={prevSlide}
+              className="p-2 md:p-3 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors pointer-events-auto shadow-lg backdrop-blur-sm"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft size={24} className="md:w-7 md:h-7" />
+            </button>
+            <button 
+              onClick={nextSlide}
+              className="p-2 md:p-3 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors pointer-events-auto shadow-lg backdrop-blur-sm"
+              aria-label="Next slide"
+            >
+              <ChevronRight size={24} className="md:w-7 md:h-7" />
+            </button>
+          </div>
         </div>
 
         {/* Indicators */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-wrap justify-center max-w-[90vw] gap-2 z-10 pointer-events-none">
+        <div className="hidden md:flex flex-wrap justify-center gap-2 pb-6 px-4 z-10 w-full max-w-[1200px] mx-auto">
           {carouselImages.map((_, idx) => (
             <button
               key={idx}
               onClick={() => setCurrentSlide(idx)}
-              className={`w-2 h-2 rounded-full transition-all pointer-events-auto ${
-                idx === currentSlide ? 'bg-primary w-6' : 'bg-on-background/20'
+              className={`w-2.5 h-2.5 md:w-2 md:h-2 rounded-full transition-all pointer-events-auto ${
+                idx === currentSlide ? 'bg-primary w-6 md:w-6' : 'bg-on-background/20 hover:bg-on-background/40'
               }`}
               aria-label={`Go to slide ${idx + 1}`}
             />
