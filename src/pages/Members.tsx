@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Members() {
   useEffect(() => {
@@ -27,14 +28,29 @@ export default function Members() {
             <p className="text-on-surface mb-6">
               200 dollars required.
             </p>
-            <a
-              href="https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiQWxwaW5lIFJhY2luZyBhdCBPU1UiLCJ0b2tlbiI6ImFscGluZS1yYWNpbmctYXQtb3N1In0="
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex justify-center items-center px-8 py-3 bg-primary text-on-primary text-base font-bold rounded-full shadow hover:bg-primary/90 transition-colors"
-            >
-              Pay with Zelle
-            </a>
+
+            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+              <div className="bg-white p-3 rounded-lg border border-outline-variant/20 shadow-xs inline-block shrink-0">
+                <img
+                  src={`${import.meta.env.BASE_URL}zelle-qr.png`}
+                  alt="Zelle QR Code - Alpine Racing at OSU"
+                  className="w-40 h-40 object-contain block"
+                />
+              </div>
+              <div className="flex-1 text-center sm:text-left self-center">
+                <p className="text-sm text-on-surface-variant mb-4">
+                  Scan the QR code with your banking app or click below to open the link directly.
+                </p>
+                <a
+                  href="https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiQWxwaW5lIFJhY2luZyBhdCBPU1UiLCJ0b2tlbiI6ImFscGluZS1yYWNpbmctYXQtb3N1In0="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex justify-center items-center px-8 py-3 bg-primary text-on-primary text-base font-bold rounded-full shadow hover:bg-primary/90 transition-colors"
+                >
+                  Pay with Zelle
+                </a>
+              </div>
+            </div>
           </div>
 
           {/* PayPal / Venmo / Apple Pay */}
@@ -66,8 +82,11 @@ export default function Members() {
               You can also pay with cash or a check during the next meeting.
             </p>
             <p className="text-on-surface-variant">
-              Message Cooper Tillson
-              to be able to create a meeting time to pay dues if the main meeting does not work.
+              Message Cooper Tillson or reach out through our{' '}
+              <Link to="/contact" className="text-primary font-bold hover:underline">
+                contact page
+              </Link>{' '}
+              to create a meeting time to pay dues if the main meeting does not work.
             </p>
           </div>
         </div>
