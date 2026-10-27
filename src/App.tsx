@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { HashRouter, Routes, Route, Link } from 'react-router-dom';
 import { Menu, X, Instagram } from 'lucide-react';
 import Home from './pages/Home';
+import Members from './pages/Members';
 import Donate from './pages/Donate';
 import Contact from './pages/Contact';
 
@@ -38,6 +39,7 @@ export default function App() {
             <div className="hidden md:flex items-center gap-8">
               <Link to="/" className="text-sm font-medium hover:text-primary transition-colors">Home</Link>
               <Link to="/" className="text-sm font-medium hover:text-primary transition-colors">About</Link>
+              <Link to="/members" className="text-sm font-medium hover:text-primary transition-colors">Members</Link>
               <Link to="/contact" className="text-sm font-medium hover:text-primary transition-colors">Contact</Link>
               <Link to="/donate" className="bg-primary text-on-primary px-5 py-2 text-sm font-bold rounded-sm">
                 Donations Page
@@ -54,6 +56,7 @@ export default function App() {
             <div className="md:hidden bg-surface border-b border-outline-variant/20 px-6 py-4 flex flex-col gap-4 shadow-lg absolute w-full left-0">
               <Link to="/" onClick={() => setIsMenuOpen(false)} className="text-sm font-medium">Home</Link>
               <Link to="/" onClick={() => setIsMenuOpen(false)} className="text-sm font-medium">About</Link>
+              <Link to="/members" onClick={() => setIsMenuOpen(false)} className="text-sm font-medium">Members</Link>
               <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="text-sm font-medium">Contact</Link>
               <Link to="/donate" onClick={() => setIsMenuOpen(false)} className="text-sm font-medium text-primary">Donations Page</Link>
             </div>
@@ -63,6 +66,7 @@ export default function App() {
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/members" element={<Members />} />
             <Route path="/donate" element={<Donate />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
@@ -80,4 +84,3 @@ export default function App() {
     </HashRouter>
   );
 }
-
